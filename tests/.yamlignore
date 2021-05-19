@@ -1,0 +1,5 @@
+# Yamlignore Test
+.*
+YAML
+.travis.yml
+*.rx.yml

@@ -1,0 +1,34 @@
+Metadata-Version: 2.1
+Name: fpf
+Version: 0.1.0
+Summary: Filter Paths in Python the easy way
+Home-page: https://github.ibm.com/MSS-MDR
+Author: Filipe Spencer Lopes
+Author-email: filipe@spncr.be
+License: UNKNOWN
+Keywords: sample mdr setuptools development demo
+Platform: UNKNOWN
+Classifier: Development Status :: 3 - Alpha
+Classifier: Intended Audience :: Developers
+Classifier: Topic :: Software Development :: Build Tools
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python :: 3.6
+Classifier: Programming Language :: Python :: 3.7
+Classifier: Programming Language :: Python :: 3.8
+Requires-Python: >=3.6.8, <4
+Description-Content-Type: text/markdown
+Requires-Dist: pathspec
+Provides-Extra: dev
+Requires-Dist: check-manifest ; extra == 'dev'
+Provides-Extra: test
+Requires-Dist: coverage ; extra == 'test'
+
+# File Path Filter
+
+Filter Paths in Python the easy way
+
+## Features
+
+* TODO
+
+

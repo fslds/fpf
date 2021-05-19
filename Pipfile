@@ -1,0 +1,21 @@
+
+[dev-packages]
+twine = '*'
+wheel = '*'
+pytest = "*"
+pytest-cov = "*"
+coverage = "*"
+flake8 = "*"
+pydocstyle = "*"
+pycodestyle = "*"
+mypy = "*"
+pylint = "*"
+bump2version = "*"
+fpf = {editable = true, path = "."}
+
+[requires]
+python_version = "3.8"
+
+[scripts]
+build-sdist = "python setup.py sdist"
+build-wheel = "python setup.py bdist_wheel"
