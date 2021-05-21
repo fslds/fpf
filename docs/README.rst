@@ -7,7 +7,8 @@ Filter Paths in Python the easy way.
 This library aims to provide simple means to filter file paths.
 
 
-## The base function: `filter_file_paths`
+The base function: `filter_file_paths`
+######################################
 
 
 `filter_file_paths` takes in three arguments:
