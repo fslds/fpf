@@ -99,8 +99,7 @@ Applying the filter, would give us the following result:
 Introducing ignore files
 -------------------------
 
-The Git project and their users had the same issue. They solved this with the `.gitignore(pathspec)  file<https://git-scm.com/docs/gitignore>`_.
+The Git project and their users had the same issue. They solved this with the `.gitignore(pathspec)  file <https://git-scm.com/docs/gitignore>`_.
 
 This library offers some helper classes and functions to apply this to your project.
-
 
