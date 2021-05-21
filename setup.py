@@ -16,7 +16,13 @@ PACKAGE_NAME = 'fpf'
 AUTHOR = "Filipe Spencer Lopes"
 AUTHOR_EMAIL = 'filipe@spncr.be'
 DESCRIPTION = 'Filter Paths in Python the easy way'
-VERSION = '0.1.0'
+LOCATIONS = {
+    'github': 'https://github.com/fslds/fpf',
+    'docs': 'https://fps.readthedocs.io/',
+    'issue': 'https://github.com/fslds/fpf/issues'
+}
+
+VERSION = '0.1.2'
 REQUIREMENTS = [
     'pathspec'
 ]
@@ -95,7 +101,7 @@ setup(
     #
     # This field corresponds to the "Home-Page" metadata field:
     # https://packaging.python.org/specifications/core-metadata/#home-page-optional
-    url='https://github.ibm.com/MSS-MDR',  # Optional
+    project_urls=LOCATIONS,
 
     # This should be your name or the name of the organization which owns the
     # project.
@@ -126,16 +132,17 @@ setup(
         # that you indicate whether you support Python 2, Python 3 or both.
         # These classifiers are *not* checked by 'pip install'. See instead
         # 'python_requires' below.
-        'Programming Language :: Python :: 3.6',
         'Programming Language :: Python :: 3.7',
         'Programming Language :: Python :: 3.8',
+        'Programming Language :: Python :: 3.8',
+
     ],
 
     # This field adds keywords for your project which will appear on the
     # project page. What does your project relate to?
     #
     # Note that this is a string of words separated by whitespace, not a list.
-    keywords='sample mdr setuptools development demo',  # Optional
+    keywords='path filter file ignorefile gitignore',  # Optional
 
     # You can just specify package directories manually here if your project is
     # simple. Or you can use find_packages().
