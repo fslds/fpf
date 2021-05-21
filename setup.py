@@ -39,7 +39,7 @@ def find_scripts():
 # Get the long description from the `README.md` file.
 HERE = path.abspath(path.dirname(__file__))
 
-with open(path.join(HERE, 'README.md'), encoding='utf-8') as f:
+with open(path.join(HERE, 'README.rst'), encoding='utf-8') as f:
     LONG_DESCRIPTION = f.read()
 
 setup(
