@@ -70,7 +70,7 @@ class YamlPathSpecFilter(ExtensionFileFilter, PathSpecWildcardFileFilter):
         :type path_spec_str: str, optional
         :param extensions: YAML file extensions, defaults to ``['.yml', '.yaml']``.
         :type extensions: list, optional
-        :param ignore_extension_case: ignore extension cases., defaults to True
+        :param ignore_extension_case: ignore extension cases, defaults to ``True``
         :type ignore_extension_case: bool, optional
         """
         PathSpecWildcardFileFilter.__init__(self, path_spec_str=path_spec_str)
@@ -100,11 +100,11 @@ class YamlIgnoreFileFilter(YamlPathSpecFilter, ReadFileMixin):
     """Filter YAML files(`.yml, .yaml`) based on pathspec wildcard file(gitignore style)."""
 
     def __init__(self, ignore_file_path: str = '.yamlignore', extensions=['.yml', '.yaml'], ignore_extension_case=True):
-        """Create a filepath filter based on a `.yamlignore` file (similar to a `.gitignore`).
+        """Create a filepath filter based on a ``.yamlignore`` file (similar to a ``.gitignore``).
 
-        :param ignore_file_path: path to the yamlignore file, defaults to `.yamlignore`
+        :param ignore_file_path: path to the yamlignore file, defaults to ``.yamlignore``
         :type ignore_file_path: str, optional
-        :param extensions: Extensions to allow, defaults to `['.yml', '.yaml']`.
+        :param extensions: Extensions to allow, defaults to ``['.yml', '.yaml']``.
         :type extensions: list, optional
         :param ignore_extension_case: ignore cases of extensions(yml vs YML), defaults to True.
         :type ignore_extension_case: bool, optional
