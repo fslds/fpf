@@ -75,7 +75,6 @@ Applying the filter, would give us the following result:
       print(path)
 
 
-
 .. code-block:: console
 
    build/lib/fpf/__init__.py
@@ -85,6 +84,7 @@ Applying the filter, would give us the following result:
    fpf/filters.py
    ...
    tests/__init__.py
+   setup.py
 
 * Q: But what if I am not interested in build artifacts or tests?
 * A: You can add more conditions to ``filter(filepath)``
@@ -96,10 +96,10 @@ Applying the filter, would give us the following result:
 * A: Maybe. But is too late now.
 
 
-Enter ignore files
-------------------
+Introducing ignore files
+-------------------------
 
-The Git project and their users had the same issue. They solved this with the [.gitignore(pathspec)  file.](https://git-scm.com/docs/gitignore)
+The Git project and their users had the same issue. They solved this with the `.gitignore(pathspec)  file<https://git-scm.com/docs/gitignore>`_.
 
 This library offers some helper classes and functions to apply this to your project.
 
