@@ -42,9 +42,9 @@ class ExtensionFileFilter(FilePathMatchCallableMixin):
         """Create a new filter based on file extensions.
 
         :param extensions: File extensions to *whitelist*, defaults to an empty set.
-            The extension should start with `.`.
+            The extension should start with ``.``.
         :type extensions: Set[str], optional
-        :param ignore_case: [description], defaults to True
+        :param ignore_case: Ignore extension case (``.exe`` vs ``.EXE``), defaults to True
         :type ignore_case: bool, optional
         """
         if ignore_case:
@@ -66,11 +66,11 @@ class YamlPathSpecFilter(ExtensionFileFilter, PathSpecWildcardFileFilter):
     def __init__(self, path_spec_str: str = '', extensions=['.yml', '.yaml'], ignore_extension_case=True):
         """Create a PathSpec Wildcard filter.
 
-        :param path_spec_str: [description], defaults to ''
+        :param path_spec_str: pathsspec multiline string, defaults to ``''`` (no spec)
         :type path_spec_str: str, optional
-        :param extensions: [description], defaults to ['.yml', '.yaml']
+        :param extensions: YAML file extensions, defaults to ``['.yml', '.yaml']``.
         :type extensions: list, optional
-        :param ignore_extension_case: [description], defaults to True
+        :param ignore_extension_case: ignore extension cases., defaults to True
         :type ignore_extension_case: bool, optional
         """
         PathSpecWildcardFileFilter.__init__(self, path_spec_str=path_spec_str)
