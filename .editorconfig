@@ -21,6 +21,10 @@ end_of_line = crlf
 indent_style = space
 indent_size = 4
 
+[*.rst]
+indent_style = space
+indent_size = 3
+
 [LICENSE]
 insert_final_newline = false
 
@@ -29,6 +33,10 @@ indent_style = tab
 
 [*.{diff,patch}]
 trim_trailing_whitespace = false
+
+[*{.yml,.yaml}]
+indent_style = space
+indent_size = 2
 
 [{package.json,.travis.yml}]
 indent_style = space
