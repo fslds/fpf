@@ -8,13 +8,13 @@ from .mixins import FilePathMatchCallableMixin, ReadFileMixin
 
 
 class PathSpecWildcardFileFilter(FilePathMatchCallableMixin):
-    """Filter files based on PathSpec WildMatch (gitignore)."""
+    """Filter files based on PathSpec WildMatch (`.gitignore`)."""
 
     def __init__(self, path_spec_str: str = ''):
         """Create a new path spec wildcard file filter.
 
         :param path_spec_str: pathspec wildcard paterns. One per line, defaults to ''.
-        If you want to ignore all hidden files, a valid pattern would be `.*`
+            If you want to ignore all hidden files, a valid pattern would be `.*`
         :type path_spec_str: str, optional
         """
         self._spec = pathspec.PathSpec.from_lines(
@@ -34,13 +34,15 @@ class PathSpecWildcardFileFilter(FilePathMatchCallableMixin):
 
 
 class ExtensionFileFilter(FilePathMatchCallableMixin):
-    """Filter files based on a match of the file extensions."""
+    """Filter files based on a match of the file extensions.
+
+    You can set it to ignore cases. Make sure to start each extension with the dot (`.`)."""
 
     def __init__(self, extensions: Set[str] = set(), ignore_case: bool = True):
         """Create a new filter based on file extensions.
 
-        :param extensions: File extensions to 'whitelist', defaults to an empty set.
-        The extension should start with '.'
+        :param extensions: File extensions to *whitelist*, defaults to an empty set.
+            The extension should start with `.`.
         :type extensions: Set[str], optional
         :param ignore_case: [description], defaults to True
         :type ignore_case: bool, optional
@@ -79,7 +81,7 @@ class YamlPathSpecFilter(ExtensionFileFilter, PathSpecWildcardFileFilter):
 
 
 class IgnoreFileFilter(PathSpecWildcardFileFilter, ReadFileMixin):
-    """Filter files based on an ignore file like .gitignore."""
+    """Filter files based on an ignore file like `.gitignore`."""
 
     def __init__(self, ignore_file_path: str):
         """Create a filter based on an ignore file.
@@ -95,17 +97,17 @@ class IgnoreFileFilter(PathSpecWildcardFileFilter, ReadFileMixin):
 
 
 class YamlIgnoreFileFilter(YamlPathSpecFilter, ReadFileMixin):
-    """Filter YAML files(.yml, .yaml) based on pathspec wildcard file(gitignore style)."""
+    """Filter YAML files(`.yml, .yaml`) based on pathspec wildcard file(gitignore style)."""
 
     def __init__(self, ignore_file_path: str = '.yamlignore', extensions=['.yml', '.yaml'], ignore_extension_case=True):
-        """Create a filepath filter based on a '.yamlignore' file(similar to a .gitignore).
+        """Create a filepath filter based on a `.yamlignore` file (similar to a `.gitignore`).
 
-        : param ignore_file_path: path to the yamlignore file, defaults to '.yamlignore'
-        : type ignore_file_path: str, optional
-        : param extensions: Extensions to allow, defaults to['.yml', '.yaml'].
-        : type extensions: list, optional
-        : param ignore_extension_case: ignore cases of extensions(yml vs YML), defaults to True.
-        : type ignore_extension_case: bool, optional
+        :param ignore_file_path: path to the yamlignore file, defaults to `.yamlignore`
+        :type ignore_file_path: str, optional
+        :param extensions: Extensions to allow, defaults to `['.yml', '.yaml']`.
+        :type extensions: list, optional
+        :param ignore_extension_case: ignore cases of extensions(yml vs YML), defaults to True.
+        :type ignore_extension_case: bool, optional
         """
         yaml_ignore_contents = self._read_file(ignore_file_path)
         YamlPathSpecFilter.__init__(
@@ -114,3 +116,12 @@ class YamlIgnoreFileFilter(YamlPathSpecFilter, ReadFileMixin):
             extensions=extensions,
             ignore_extension_case=ignore_extension_case
         )
+
+
+__all__ = [
+    'ExtensionFileFilter',
+    'IgnoreFileFilter',
+    'PathSpecWildcardFileFilter',
+    'YamlIgnoreFileFilter',
+    'YamlPathSpecFilter'
+]
