@@ -44,7 +44,6 @@ extensions = [
 # Set MD files as potential sources.
 source_suffix = {
     '.rst': 'restructuredtext',
-    '.txt': 'restructuredtext',
     '.md': 'markdown',
 }
 
