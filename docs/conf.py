@@ -39,7 +39,6 @@ extensions = [
     'sphinx.ext.githubpages',
     'sphinx.ext.autosummary',
     'autoapi.sphinx',
-    'm2r2'
 ]
 
 # Set MD files as potential sources.
