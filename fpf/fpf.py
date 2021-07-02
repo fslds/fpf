@@ -27,11 +27,12 @@ Example usage with an `fpf` filter:
 
 import os
 from typing import Callable, Generator
+from .filters import DummyFilter
 
 
-def filter_file_paths(
+def file_path_filter(
         root_dir: str,
-        path_filter: Callable[[str], bool],
+        path_filter: Callable[[str], bool] = DummyFilter(),
         relative_paths=True) -> Generator[str, None, None]:
     """Filter file paths/names relative to the root based on a filter.
 
@@ -44,7 +45,7 @@ def filter_file_paths(
     :type relative_paths: bool, optional
     :yield: file path/name that passes the filter.
     :rtype: Generator[str, None, None]
-   """
+    """
     for root, subdirs, files in os.walk(root_dir):
         for file in files:
             abs_path = os.path.join(root, file)
@@ -56,4 +57,8 @@ def filter_file_paths(
                     yield abs_path
 
 
-__all__ = ['filter_file_paths']
+# Add some aliases for the function
+filter_file_paths = file_path_filter
+fpf = file_path_filter  # shortcut for the function
+
+__all__ = ['file_path_filter', 'filter_file_paths', 'fpf']
