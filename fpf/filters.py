@@ -118,10 +118,27 @@ class YamlIgnoreFileFilter(YamlPathSpecFilter, ReadFileMixin):
         )
 
 
+class UnixHiddenFileFilter(FilePathMatchCallableMixin):
+    """Filter out any hidden files (starting with a .)."""
+
+    def _match(self, file_path: str):
+        basename = ntpath.basename(file_path)
+        return not basename.startswith('.')
+
+
+class DummyFilter(FilePathMatchCallableMixin):
+    """Do not filter out anything."""
+
+    def _match(self, file_path: str):
+        return True
+
+
 __all__ = [
     'ExtensionFileFilter',
     'IgnoreFileFilter',
     'PathSpecWildcardFileFilter',
     'YamlIgnoreFileFilter',
-    'YamlPathSpecFilter'
+    'YamlPathSpecFilter',
+    'UnixHiddenFileFilter',
+    'DummyFilter',
 ]
