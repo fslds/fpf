@@ -6,15 +6,21 @@ from .filters import (  # noqa: F401
     IgnoreFileFilter,
     PathSpecWildcardFileFilter,
     YamlIgnoreFileFilter,
-    YamlPathSpecFilter)
-from .fpf import filter_file_paths  # noqa: F401
+    YamlPathSpecFilter,
+    UnixHiddenFileFilter,
+    DummyFilter)
+from .fpf import fpf, file_path_filter, filter_file_paths  # noqa: F401
 
-__VERSION__ = '0.1.1'
+__VERSION__ = '0.1.3'
 __all__ = [
-    'filter_file_paths'
+    'fpf',
+    'file_path_filter',
+    'filter_file_paths',
     'ExtensionFileFilter',
     'IgnoreFileFilter',
     'PathSpecWildcardFileFilter',
     'YamlIgnoreFileFilter',
-    'YamlPathSpecFilter'
+    'YamlPathSpecFilter',
+    'UnixHiddenFileFilter',
+    'DummyFilter'
 ]
