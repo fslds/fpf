@@ -138,5 +138,8 @@ dmypy.json
 cython_debug/
 
 
-#Ignore built documentation
+# Ignore built documentation
 docs/_build
+
+# Ignore autobuilds
+docs/_build/fpf/
