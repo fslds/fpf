@@ -22,7 +22,7 @@ LOCATIONS = {
     'issue': 'https://github.com/fslds/fpf/issues'
 }
 
-VERSION = '0.1.3'
+VERSION = '0.1.4'
 REQUIREMENTS = [
     'pathspec'
 ]
