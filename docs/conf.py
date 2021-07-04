@@ -87,4 +87,6 @@ html_sidebars = {
         'donate.html',
     ]
 }
-autoapi_modules = {'fpf': None}
+autoapi_modules = {'fpf': {
+    'output': 'api'
+}}
