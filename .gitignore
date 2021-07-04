@@ -142,4 +142,4 @@ cython_debug/
 docs/_build
 
 # Ignore autobuilds
-docs/_build/fpf/
+docs/api/*.rst
