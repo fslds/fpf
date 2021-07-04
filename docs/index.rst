@@ -4,7 +4,7 @@ FPF
 
 Welcome to the FPF - File Path Filtering documentation.
 
-Start with reading :doc:`Getting Started (Readme) <README>` or head straight into our :doc:`API documentation <fpf/fpf>`.
+Start with reading :doc:`Getting Started (Readme) <README>` or head straight into our :doc:`API documentation <api/fpf>`.
 
 
 
@@ -12,7 +12,7 @@ Start with reading :doc:`Getting Started (Readme) <README>` or head straight int
    :maxdepth: 6
 
    Getting Started <README>
-   API <fpf/fpf>
+   API <api/fpf>
 
 
 Indices and tables
